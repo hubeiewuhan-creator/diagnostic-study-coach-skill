@@ -1,8 +1,13 @@
-﻿# 诊断式学习教练 · diagnostic-study-coach
+# 诊断式学习教练 · diagnostic-study-coach
 
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)
-![形态](https://img.shields.io/badge/形态-Markdown--only%20·%20DSH%20skill-blue.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![DSH skill](https://img.shields.io/badge/DSH-原生%20skill-2f6f4e.svg)](INSTALL.md)
+![形态](https://img.shields.io/badge/形态-Markdown--only-blue.svg)
 ![来源](https://img.shields.io/badge/融合-三套机制-green.svg)
+![内核](https://img.shields.io/badge/内核-十二问链%20·%20四层闭环-orange.svg)
+![状态](https://img.shields.io/badge/状态-稳定-brightgreen.svg)
+
+> 关联项目：[math-selfstudy-tutor-skill](https://github.com/hubeiewuhan-creator/math-selfstudy-tutor-skill) —— 本综合版的数学内核独立成包版本。
 
 一个导师，没有功能菜单。**先诊断你卡在哪一层认知，再决定下一步做什么**——出题、追问、听你主讲、批改说理、放变式、建学习路径，还是查可信资源。目标是掌握，不是做完。
 

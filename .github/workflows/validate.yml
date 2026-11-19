@@ -1,0 +1,47 @@
+name: Validate skill
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  markdown-links:
+    name: 检查 markdown 相对链接
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 运行链接检查
+        run: bash scripts/check-links.sh
+
+  skill-structure:
+    name: 检查 skill 结构完整
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 必备文件存在
+        run: |
+          set -e
+          test -f skills/diagnostic-study-coach/SKILL.md
+          test -f skills/diagnostic-study-coach/references/priority.md
+          test -f skills/diagnostic-study-coach/references/loop.md
+          test -f skills/diagnostic-study-coach/references/confirmation.md
+          test -f skills/diagnostic-study-coach/references/universal.md
+          test -f skills/diagnostic-study-coach/references/mastery.md
+          test -f evals/cases.json
+          test -f README.md
+          echo "skill 结构完整"
+
+  frontmatter:
+    name: 检查 SKILL.md frontmatter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: name 与 description 存在
+        run: |
+          set -e
+          head -n 12 skills/diagnostic-study-coach/SKILL.md | grep -q '^name:'
+          head -n 12 skills/diagnostic-study-coach/SKILL.md | grep -q '^description:'
+          echo "frontmatter 合规"
